@@ -1,0 +1,23 @@
+.list {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.item {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.value {
+  margin-left: 10px;
+}
