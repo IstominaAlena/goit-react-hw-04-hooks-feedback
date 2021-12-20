@@ -7,27 +7,21 @@ import Notification from './components/Notification';
 
 import './styles/App.css';
 
-const App = () => {
-  const [good, setGood] = useState(0);
-  const [neutral, setNeutral] = useState(0);
-  const [bad, setBad] = useState(0);
+const buttonsOption = ['good', 'neutral', 'bad'];
 
-  const buttonsOption = ['good', 'neutral', 'bad'];
+const App = () => {
+  const [state, setState] = useState({
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  });
+  const { good, neutral, bad } = state;
 
   const handleClick = option => {
-    switch (option) {
-      case buttonsOption[0]:
-        setGood(prev => prev + 1);
-        break;
-      case buttonsOption[1]:
-        setNeutral(prev => prev + 1);
-        break;
-      case buttonsOption[2]:
-        setBad(prev => prev + 1);
-        break;
-      default:
-        return;
-    }
+    setState(prev => ({
+      ...state,
+      [option]: prev[option] + 1,
+    }));
   };
 
   const countTotalFeedback = () => {
